@@ -16,6 +16,6 @@ Template.Game.prototype = {
         this.game.stage.backgroundColor = '#3498db'
         
         //adding sprites
-        this.player = this.game.add.sprite(100, 300, 'peach');
+        this.player = this.game.add.sprite(100, 300, 'blondeDora');
     }
 };

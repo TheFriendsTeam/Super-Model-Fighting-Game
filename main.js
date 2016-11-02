@@ -9,7 +9,7 @@ var mainState = {
         game.load.image('peach', 'peach.gif');
         
         
-        game.load.image('coin', 'coin.png')
+        game.load.image('logo', 'Logo.jpg')
     }
     , create: function () {
         // This function is called after the 'preload' function 

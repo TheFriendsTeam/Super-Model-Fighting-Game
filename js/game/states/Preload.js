@@ -17,6 +17,7 @@ Template.Preload.prototype = {
 
         this.load.image('peach', "assests/images/peach.gif");
          this.load.image("logo", "assests/images/logo-fb.png");
+    
         
         
     },

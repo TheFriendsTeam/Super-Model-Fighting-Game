@@ -3,35 +3,39 @@
 TopDownGame.Game = function () {};
 TopDownGame.Game.prototype = {
     create: function () {
-        
+
         this.game.physics.arcade.gravity.y = 300;
         this.map = this.game.add.tilemap('map');
         //the first parameter is the tileset name as specified in Tiled, the second is the key to the asset
         this.map.addTilesetImage('tiles', 'gameTiles');
+        this.map.addTilesetImage('castle_tileset_part1', 'castleTiles1');
+        this.map.addTilesetImage('castle_tileset_part2', 'castleTiles2');
+        this.map.addTilesetImage('castle_tileset_part3', 'castleTiles3');
         //create layer
-        
+
         //player
-          
-        
-        this.backgroundlayer = this.map.createLayer('backgroundLayer');
-        this.blockedLayer = this.map.createLayer('collideLayer');
+
+
+        this.backgroundLayer = this.map.createLayer('backgroundLayer');
+        this.Forground = this.map.createLayer('Forground');
+        this.collideLayer = this.map.createLayer('collideLayer')
         //collision on blockedLayer
-      
-        
+
+
         //resizes the game world to match the layer dimensions
         this.backgroundlayer.resizeWorld();
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.map.setCollisionBetween(1,1000, true, 'collideLayer');
         //this.map.setCollision("")
         //this.createItems();
-        //this.createDoors();    
+        //this.createDoors();
         //create player
         var result = this.findObjectsByType('playerStart', this.map, 'player')
         this.player = this.game.add.sprite(result[0],result[1], 'player');
-      
+
         this.game.physics.arcade.enable(this.player);
         this.player.body.velocity.y =0;
-       
+
         //the camera will follow the player in the world
         this.game.camera.follow(this.player);
         //move player with cursor keys
@@ -81,14 +85,14 @@ TopDownGame.Game.prototype = {
     , update: function () {
         //collision
          this.player.body.velocity.x = 0;
-        
-        
-        this.player.body.gravity.y = 200; 
+
+
+        this.player.body.gravity.y = 200;
         this.game.physics.arcade.collide(this.player,this.blockedLayer );
         this.game.physics.arcade.overlap(this.player, this.items, this.collect, null, this);
         this.game.physics.arcade.overlap(this.player, this.doors, this.enterDoor, null, this);
         //player movement
-        
+
         if (this.cursors.up.isDown) {
             if (this.player.body.velocity.y == 0) this.player.body.velocity.y = -100;
         }

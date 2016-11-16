@@ -80,7 +80,7 @@
 1737,1738,1739,1740,1737,1737,1737,1737,1737,1737,1737,1737,1737,1737,1737,1737,1737,1738,1739,1740
 </data>
  </layer>
- <layer name="collideLayer" width="20" height="30" visible="0" offsetx="-42" offsety="-54">
+ <layer name="collideLayer" width="20" height="30" offsetx="-42" offsety="-54">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -114,7 +114,7 @@
 5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292,5292
 </data>
  </layer>
- <objectgroup name="player" visible="0" offsetx="-42" offsety="-53">
+ <objectgroup name="player" offsetx="-42" offsety="-53">
   <properties>
    <property name="playerStart" type="int" value="0"/>
   </properties>

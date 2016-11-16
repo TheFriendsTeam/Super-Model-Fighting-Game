@@ -11,7 +11,7 @@ TopDownGame.MainMenu.prototype = {
         
     },
     
-    
+    // this is probably helpful for adding text but i dunno ????? https://phaser.io/examples/v2/text/center-text-on-sprite
     
     
     update: function() {

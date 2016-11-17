@@ -11,12 +11,6 @@
    to be a even multiple of 1024 meaning each tile can have a valid size of 2 pixels wide and 2 pixels high or 
    any other even number.
 
-
-
-
-
-
-
 */
 
 TopDownGame.Game = function () {};

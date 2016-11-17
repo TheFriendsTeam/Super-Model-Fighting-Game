@@ -12,7 +12,7 @@ TopDownGame.Preload.prototype = {
     //this.load.setPreloadSprite(this.preloadBar);
 
     //load game assets
-    this.load.tilemap('map', 'assets/tilemaps/testmap.json', null, Phaser.Tilemap.TILED_JSON);
+    this.load.tilemap('map', 'assets/tilemaps/douglas.json', null, Phaser.Tilemap.TILED_JSON);
     this.load.image('gameTiles', 'assets/images/tiles.png');
     this.load.image('castleTiles1', 'assets/tilemaps/castle_tileset_part1.png');
     this.load.image('castleTiles2', 'assets/tilemaps/castle_tileset_part2.png');

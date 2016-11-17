@@ -1,5 +1,24 @@
 //var TopDownGame = TopDownGame || {};
 //title screen
+
+/* To Carrie: I the error was that when you added a tileset, the size the individual tile was 
+   not a multple of the Image size. 
+
+   Next time, When you add a tileset, make sure to check the size of the image you are going to get tiles
+   from and adjust the tile size to an even multiple of the size.
+
+   for example if the image you are using is 1024 pixels wide and 1024 pixel high, then you tile size needs 
+   to be a even multiple of 1024 meaning each tile can have a valid size of 2 pixels wide and 2 pixels high or 
+   any other even number.
+
+
+
+
+
+
+
+*/
+
 TopDownGame.Game = function () {};
 TopDownGame.Game.prototype = {
     create: function () {
@@ -9,7 +28,7 @@ TopDownGame.Game.prototype = {
         //the first parameter is the tileset name as specified in Tiled, the second is the key to the asset
         this.map.addTilesetImage('tiles', 'gameTiles');
         this.map.addTilesetImage('castle_tileset_part1', 'castleTiles1');
-        this.map.addTilesetImage('castle_tileset_part2', 'castleTiles2');
+        //this.map.addTilesetImage('castle_tileset_part2', 'castleTiles2');
         this.map.addTilesetImage('castle_tileset_part3', 'castleTiles3');
         //create layer
 
@@ -23,7 +42,9 @@ TopDownGame.Game.prototype = {
 
 
         //resizes the game world to match the layer dimensions
-        this.backgroundlayer.resizeWorld();
+        //this.backgroundlayer.resizeWorld();
+        this.Forground.resizeWorld();
+        this.collideLayer.resizeWorld();
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.map.setCollisionBetween(1,1000, true, 'collideLayer');
         //this.map.setCollision("")
@@ -88,7 +109,7 @@ TopDownGame.Game.prototype = {
 
 
         this.player.body.gravity.y = 200;
-        this.game.physics.arcade.collide(this.player,this.blockedLayer );
+        this.game.physics.arcade.collide(this.player,this.collideLayer );
         this.game.physics.arcade.overlap(this.player, this.items, this.collect, null, this);
         this.game.physics.arcade.overlap(this.player, this.doors, this.enterDoor, null, this);
         //player movement

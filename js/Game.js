@@ -17,8 +17,13 @@ TopDownGame.Game = function () {};
 TopDownGame.Game.prototype = {
     create: function () {
 
+        //trigger for enemy movement.
+        this.enemyMov = false;
+
+
         this.game.physics.arcade.gravity.y = 300;
         this.map = this.game.add.tilemap('map');
+
         //the first parameter is the tileset name as specified in Tiled, the second is the key to the asset
         this.map.addTilesetImage('tiles', 'gameTiles');
         this.map.addTilesetImage('castle_tileset_part1', 'castleTiles1');
@@ -35,21 +40,40 @@ TopDownGame.Game.prototype = {
         //collision on blockedLayer
 
 
+
+
+
         //resizes the game world to match the layer dimensions
         //this.backgroundlayer.resizeWorld();
         this.Forground.resizeWorld();
         this.collideLayer.resizeWorld();
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.map.setCollisionBetween(1,1000, true, 'collideLayer');
+
         //this.map.setCollision("")
         //this.createItems();
         //this.createDoors();
         //create player
+
+
         var result = this.findObjectsByType('playerStart', this.map, 'player')
         this.player = this.game.add.sprite(result[0],result[1], 'player');
 
+
+
+        //Im about to create an enemy!!!
+        this.enemy = this.game.add.sprite(100,200, 'bride');
+
+
         this.game.physics.arcade.enable(this.player);
         this.player.body.velocity.y =0;
+
+        //Im about to give enemy physics !!!
+        this.game.physics.arcade.enable(this.enemy);
+        this.enemy.enableBody = true;
+
+
+
 
         //the camera will follow the player in the world
         this.game.camera.follow(this.player);
@@ -106,6 +130,8 @@ TopDownGame.Game.prototype = {
         this.game.physics.arcade.collide(this.player,this.collideLayer );
         this.game.physics.arcade.overlap(this.player, this.items, this.collect, null, this);
         this.game.physics.arcade.overlap(this.player, this.doors, this.enterDoor, null, this);
+
+
         //player movement
 
         if (this.cursors.up.isDown) {
@@ -123,13 +149,32 @@ TopDownGame.Game.prototype = {
         else if (this.cursors.right.isDown) {
             this.player.body.velocity.x = 100;
         }
+
+        //Enemy movement back and forth
+        if(this.enemyMov === false){
+            this.moveRight(this.enemy);
+            if(this.enemy.body.x < 10){
+              this.enemyMov = true;
+            }
+        }else{
+            this.moveLeft(this.enemy,this.enemyMov);
+            if(this.enemy.body.x > 100){
+                this.enemyMov = false;
+            }
+        }
+
     }
-    , collect: function (player, collectable) {
-        console.log('yummy!');
-        //remove sprite
-        collectable.destroy();
+
+
+    , moveRight: function (enemy) {
+        enemy.body.velocity.x = -40;
+
     }
-    , enterDoor: function (player, door) {
-        console.log('entering door that will take you to ' + door.targetTilemap + ' on x:' + door.targetX + ' and y:' + door.targetY);
+
+    , moveLeft: function (enemy) {
+        enemy.body.velocity.x = 30;
+
     }
+
+
 , };

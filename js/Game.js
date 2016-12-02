@@ -1,14 +1,14 @@
 //var TopDownGame = TopDownGame || {};
 //title screen
 
-/* To Carrie: I the error was that when you added a tileset, the size the individual tile was 
-   not a multple of the Image size. 
+/* To Carrie: I the error was that when you added a tileset, the size the individual tile was
+   not a multple of the Image size.
 
    Next time, When you add a tileset, make sure to check the size of the image you are going to get tiles
    from and adjust the tile size to an even multiple of the size.
 
-   for example if the image you are using is 1024 pixels wide and 1024 pixel high, then you tile size needs 
-   to be a even multiple of 1024 meaning each tile can have a valid size of 2 pixels wide and 2 pixels high or 
+   for example if the image you are using is 1024 pixels wide and 1024 pixel high, then you tile size needs
+   to be a even multiple of 1024 meaning each tile can have a valid size of 2 pixels wide and 2 pixels high or
    any other even number.
 
 */
@@ -67,6 +67,7 @@ TopDownGame.Game.prototype = {
 
         this.game.physics.arcade.enable(this.player);
         this.player.body.velocity.y =0;
+        this.player.body.collideWorldBounds = true;
 
         //Im about to give enemy physics !!!
         this.game.physics.arcade.enable(this.enemy);
@@ -135,7 +136,7 @@ TopDownGame.Game.prototype = {
         //player movement
 
         if (this.cursors.up.isDown) {
-            if (this.player.body.velocity.y == 0) this.player.body.velocity.y = -100;
+            if (this.player.body.velocity.y == 0) this.player.body.velocity.y = -250;
         }
         else if (this.cursors.down.isDown) {
             if (this.player.body.velocity.y == 0) this.player.body.velocity.y = 50;

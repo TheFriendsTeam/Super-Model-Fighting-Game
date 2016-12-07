@@ -27,8 +27,12 @@ TopDownGame.Game.prototype = {
         //this.createDoors();    
         //create player
         var result = this.findObjectsByType('playerStart', this.map, 'player')
-        this.player = this.game.add.sprite(result[0],result[1], 'player');
+        this.player = this.game.add.sprite(result[0],result[1], 'treeSpriteWalking');
       
+        this.player.frame = 7;
+        this.player.animations.add('left', [0,1], 10, true);
+        
+        
         this.game.physics.arcade.enable(this.player);
         this.player.body.velocity.y =0;
        
@@ -80,7 +84,9 @@ TopDownGame.Game.prototype = {
     }
     , update: function () {
         //collision
-         this.player.body.velocity.x = 0;
+        this.player.animations.stop(); 
+        
+        this.player.body.velocity.x = 0;
         
         
         this.player.body.gravity.y = 200; 
@@ -99,6 +105,7 @@ TopDownGame.Game.prototype = {
             //xhis.player.body.velocity.y = 0;
         }
         if (this.cursors.left.isDown) {
+            this.player.animations.play('left');
             this.player.body.velocity.x = -100;
         }
         else if (this.cursors.right.isDown) {

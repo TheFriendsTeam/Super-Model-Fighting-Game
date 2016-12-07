@@ -29,8 +29,8 @@ TopDownGame.Game.prototype = {
         var result = this.findObjectsByType('playerStart', this.map, 'player')
         this.player = this.game.add.sprite(result[0],result[1], 'treeSpriteWalking');
       
-        this.player.frame = 7;
-        this.player.animations.add('left', [0,1], 10, true);
+        this.player.frame = 0;
+        this.player.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7], 10, true);
         
         
         this.game.physics.arcade.enable(this.player);

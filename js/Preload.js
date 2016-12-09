@@ -20,7 +20,8 @@ TopDownGame.Preload.prototype = {
     //this.load.image('browndoor', 'assets/images/browndoor.png');
       this.load.image('MainMenuBG', 'assets/images/church.jpg');
       this.load.image('SUPERMODEL', 'assets/images/SUPERMODEL.jpg');
-    this.load.spritesheet('treeSpriteWalking','assets/images/treeSpriteWalking.jpeg', 60, 59)
+   
+     this.load.atlasXML('sprite','assets/images/sprites.png','assets/images/sprites.xml'); //this.load.spritesheet('treeSpriteWalking','assets/images/treeSpriteWalking.jpeg', 60, 59)
   },
   create: function() {
     this.state.start('MainMenu');

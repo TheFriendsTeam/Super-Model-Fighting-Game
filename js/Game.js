@@ -31,6 +31,7 @@ TopDownGame.Game.prototype = {
       
        // this.player.frame = 0;
         this.player.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7], 10);
+        this.player.animations.add('right', [7, 6, 5, 4, 3, 2, 1, 0], 10);
         
         this.player.scale.setTo(.5);
         this.game.physics.arcade.enable(this.player);
@@ -109,6 +110,7 @@ TopDownGame.Game.prototype = {
             this.player.body.velocity.x = -100;
         }
         else if (this.cursors.right.isDown) {
+            this.player.animations.play('left');
             this.player.body.velocity.x = 100;
         }
     }

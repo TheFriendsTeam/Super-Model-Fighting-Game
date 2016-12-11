@@ -20,6 +20,7 @@ TopDownGame.Preload.prototype = {
     //this.load.image('browndoor', 'assets/images/browndoor.png');
       this.load.image('MainMenuBG', 'assets/images/church.jpg');
       this.load.image('SUPERMODEL', 'assets/images/SUPERMODEL.jpg');
+      this.load.image('chaomo', 'assets/images/chaomo.jpg');
    this.load.image('tras','assets/images/tras.png');
     this.load.image('samp','assets/images/samp.png');
    this.load.image('trans','assets/images/trans.png');

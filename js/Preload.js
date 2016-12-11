@@ -22,7 +22,9 @@ TopDownGame.Preload.prototype = {
       this.load.image('SUPERMODEL', 'assets/images/SUPERMODEL.jpg');
    this.load.image('tras','assets/images/tras.png');
     this.load.image('samp','assets/images/samp.png');
-    this.load.atlasXML('sprite','assets/images/sprites.png','assets/images/sprites.xml'); //this.load.spritesheet('treeSpriteWalking','assets/images/treeSpriteWalking.jpeg', 60, 59)
+   this.load.image('trans','assets/images/trans.png');
+      this.load.image('sample','assets/images/sample.png');
+      this.load.atlasXML('sprite','assets/images/sprites.png','assets/images/sprites.xml'); //this.load.spritesheet('treeSpriteWalking','assets/images/treeSpriteWalking.jpeg', 60, 59)
   },
   create: function() {
     this.state.start('MainMenu');

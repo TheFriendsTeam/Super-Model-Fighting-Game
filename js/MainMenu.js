@@ -11,11 +11,14 @@ TopDownGame.MainMenu.prototype = {
 
         this.splash.anchor.setTo(0.5);
         
-        var clic = this.add.sprite(this.game.world.centerX, this.game.world.centerY, "samp");
+        var clic = this.add.button(this.game.world.centerX, this.game.world.centerY, "samp"//, actionOnClick, 
+);
         clic.anchor.set(2.1, -0.46);
         
-    
+        var nose = this.add.sprite(this.game.world.centerX, this.game.world.centerY, "sample");
         
+        nose.x = 406;
+        nose.y = 270;
     },
     
    

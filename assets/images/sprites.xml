@@ -1,0 +1,23 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="tree_07.png" x="65" y="119" width="57" height="64"/>
+	<SubTexture name="tree_08.png" x="63" y="308" width="59" height="63"/>
+	<SubTexture name="tree_09.png" x="0" y="429" width="61" height="63"/>
+	<SubTexture name="tree_10.png" x="0" y="119" width="63" height="63"/>
+	<SubTexture name="tree_11.png" x="0" y="243" width="61" height="61"/>
+	<SubTexture name="tree_12.png" x="63" y="243" width="60" height="63"/>
+	<SubTexture name="tree_13.png" x="124" y="0" width="54" height="67"/>
+	<SubTexture name="tree_14.png" x="124" y="137" width="51" height="69"/>
+	<SubTexture name="tree_15.png" x="122" y="438" width="55" height="65"/>
+	<SubTexture name="tree_16.png" x="63" y="437" width="57" height="64"/>
+	<SubTexture name="tree_17.png" x="124" y="308" width="55" height="63"/>
+	<SubTexture name="tree_18.png" x="0" y="306" width="61" height="59"/>
+	<SubTexture name="tree_19.png" x="0" y="0" width="64" height="57"/>
+	<SubTexture name="tree_20.png" x="0" y="59" width="64" height="58"/>
+	<SubTexture name="tree_21.png" x="0" y="367" width="61" height="60"/>
+	<SubTexture name="tree_22.png" x="63" y="373" width="57" height="62"/>
+	<SubTexture name="tree_23.png" x="122" y="373" width="55" height="63"/>
+	<SubTexture name="tree_24.png" x="124" y="69" width="53" height="66"/>
+	<SubTexture name="tree_25.png" x="66" y="0" width="56" height="64"/>
+	<SubTexture name="tree_26.png" x="65" y="185" width="55" height="56"/>
+	<SubTexture name="tree_27.png" x="0" y="184" width="63" height="57"/>
+</TextureAtlas>
